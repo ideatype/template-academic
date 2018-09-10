@@ -1,0 +1,31 @@
+.ListEntryRow {
+    min-height: 200px;
+    max-height: 400px;
+}
+
+.ListEntryRowShadow {
+    position: relative;
+    width: 100%;
+    height: 20px;
+    margin-top: -20px;
+    top: 0;
+    left: 0;
+    box-shadow: inset 0 -15px 15px -15px rgba(0,0,0,.45);
+}
+
+.EntryRowImage {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center; 
+}
+
+@media (max-width: 991px) { 
+    .ListEntryRow {
+        height: auto;
+        max-height: 650px;
+    }
+    .EntryRowImage {
+        min-height: 200px;
+    }
+ }

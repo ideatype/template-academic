@@ -1,0 +1,19 @@
+.SinglePostEntryRowRight {
+    text-align: left;
+    padding-right: 30px;
+    overflow: scroll;
+    height: 93.6vh;
+}
+
+
+.SinglePostEntryRowRightText {
+    text-align: justify;
+    font-size: 1.1rem;
+
+}
+
+@media (max-width: 991px) {
+    .SinglePostEntryRowRight {
+        padding-left: 15px;
+    }
+}

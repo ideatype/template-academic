@@ -1,0 +1,17 @@
+.TopMenu {
+    padding-bottom: 10px;
+}
+
+.nav-item a {
+    color: #efefef;
+    font-weight: 200;
+    letter-spacing: 0.3px;
+}
+
+.nav-item a:hover {
+    color: #cdcdcd;
+}
+
+.nav-item .dropdown-menu a {
+    color: #040404;
+}

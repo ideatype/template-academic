@@ -1,0 +1,33 @@
+.EntryRowRight {
+    text-align: left;
+    padding-right: 30px;
+}
+
+.EntryRowRightTitle {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.EntryRowRightDetails {
+    color: #ababab;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.EntryRowRightText {
+    text-align: justify;
+    font-size: 1.1rem;
+    max-height: 240px;
+    overflow-wrap: break-word;
+    overflow: hidden;
+}
+
+@media (max-width: 991px) { 
+    .EntryRowRight {
+        padding-left: 30px;
+    }
+
+    .EntryRowRightText {
+        max-height: 163px;
+    }
+ }

@@ -1,0 +1,72 @@
+.AppOverlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #1565C0;
+    z-index: 10000;
+    display: table;
+
+    pointer-events: none;
+    opacity: 0;
+
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.loading .AppOverlay {
+    pointer-events: all;
+    opacity: 1;
+}
+
+.AppOverlay .container {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.AppOverlay .container .spinner {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin: 100px auto;
+}
+.AppOverlay .container .spinner .double-bounce1,
+.AppOverlay .container .spinner .double-bounce2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #efefef;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.AppOverlay .container .spinner .double-bounce2 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+    0%,
+    100% {
+        -webkit-transform: scale(0.0)
+    }
+    50% {
+        -webkit-transform: scale(1.0)
+    }
+}
+
+@keyframes sk-bounce {
+    0%,
+    100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    }
+    50% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+}
