@@ -6,6 +6,7 @@ import {
 import "./Header.css";
 import ConfigManager from "./ConfigManager";
 import LoadingManager from "./LoadingManager";
+import { Link } from 'react-router-dom';
 import TopMenu from "./TopMenu.js";
 import { API_ROOT } from "./ApiConf";
 
@@ -42,7 +43,7 @@ class Header extends Component {
 		return (
 			<div className="Header">
 				<Navbar color="light" light expand="md">
-					<NavbarBrand href="/">{this.state.siteConfig.site_name}</NavbarBrand>
+					<NavbarBrand tag={Link} to="/">{this.state.siteConfig.site_name}</NavbarBrand>
 					<TopMenu entries={this.state.topMenuEntries} />
 				</Navbar>
 			</div>

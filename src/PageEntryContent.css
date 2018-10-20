@@ -1,0 +1,18 @@
+.PageEntryContent {
+    text-align: left;
+    padding-right: 30px;
+    margin-top: 50px;
+}
+
+
+.PageEntryContentText {
+    text-align: justify;
+    font-size: 1.1rem;
+
+}
+
+@media (max-width: 991px) {
+    .PageEntryContent {
+        padding-left: 15px;
+    }
+}

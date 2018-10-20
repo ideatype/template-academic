@@ -8,12 +8,15 @@ import {
 	DropdownMenu,
 	DropdownItem
 } from "reactstrap";
+import { Link } from 'react-router-dom';
 import './TopMenu.css';
 
 class TopMenu extends Component {
 	render() {
 		let passedEntries = this.props.entries;
-		passedEntries.unshift({ title: "Home", value: "/" });
+		if (passedEntries.length >= 1 && passedEntries[0].title != "Home") {
+			passedEntries.unshift({ title: "Home", value: "/" });
+		}
 		let entries = passedEntries.map((entry) => {
 			if (Array.isArray(entry.value)) {
 				return (
@@ -23,14 +26,14 @@ class TopMenu extends Component {
 						</DropdownToggle>
 						<DropdownMenu right>
 							{entry.value.map((subentry) => {
-								return <DropdownItem><NavLink href={subentry.value}>{subentry.title}</NavLink></DropdownItem>
+								return <DropdownItem><NavLink tag={Link} to={subentry.value}>{subentry.title}</NavLink></DropdownItem>
 							})}
 						</DropdownMenu>
 					</UncontrolledDropdown>
 				)
 			} else {
 				return (<NavItem>
-					<NavLink href={entry.value}>
+					<NavLink tag={Link} to={entry.value}>
 						{entry.title}
 					</NavLink>
 				</NavItem>);

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import MainPage from "./MainPage";
 import AppContainer from "./AppContainer";
 import SinglePostPage from "./SinglePostPage";
+import PagePage from "./PagePage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LoadingManager from "./LoadingManager";
 import ConfigManager from "./ConfigManager";
@@ -45,6 +46,7 @@ class AppLayout extends Component {
 					<main>
 						<Route path="/" exact component={MainPage} />
 						<Route path="/post/:postId" exact component={SinglePostPage} />
+						<Route path="/page/:pageId" exact component={PagePage} />
 					</main>
 				</AppContainer>
 			</div>;

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import TopMenu from "./TopMenu.js";
+import AppOverlay from "./AppOverlay";
 import "./AppContainer.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -9,7 +10,9 @@ class AppContainer extends Component {
 			<div class="AppContainer">
 				<TopMenu entries={this.props.topMenuEntries} />
 				<div class="ChildContainer container shadow-lg ">
-					{this.props.children}
+					<AppOverlay>
+						{this.props.children}
+					</AppOverlay>
 				</div>
 			</div>
 		);

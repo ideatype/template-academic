@@ -1,11 +1,5 @@
-.AppOverlay {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-color: #1565C0;
-    z-index: 10000;
-    display: table;
-
+.AppOverlayContainer {
+    max-height: 0;
     pointer-events: none;
     opacity: 0;
 
@@ -14,24 +8,46 @@
     transition: opacity 0.5s ease-in-out;
 }
 
-.loading .AppOverlay {
+.AppOverlay {
+    width: 100%;
+    height: 100%;
+    background-color: #1565C0;
+    z-index: 10000;
+
+    display: table;
+}
+
+.loading .AppOverlayContainer {
+    max-height: 100%;
     pointer-events: all;
     opacity: 1;
 }
 
-.AppOverlay .container {
+.hide_while_loading {
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.loading .hide_while_loading {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+}
+
+.AppOverlay .OverlayContainer {
     display: table-cell;
     vertical-align: middle;
 }
 
-.AppOverlay .container .spinner {
+.AppOverlay .OverlayContainer .spinner {
     width: 100px;
     height: 100px;
     position: relative;
     margin: 100px auto;
 }
-.AppOverlay .container .spinner .double-bounce1,
-.AppOverlay .container .spinner .double-bounce2 {
+.AppOverlay .OverlayContainer .spinner .double-bounce1,
+.AppOverlay .OverlayContainer .spinner .double-bounce2 {
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -44,7 +60,7 @@
     animation: sk-bounce 2.0s infinite ease-in-out;
 }
 
-.AppOverlay .container .spinner .double-bounce2 {
+.AppOverlay .OverlayContainer .spinner .double-bounce2 {
     -webkit-animation-delay: -1.0s;
     animation-delay: -1.0s;
 }
