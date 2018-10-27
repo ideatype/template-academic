@@ -26,12 +26,22 @@ class SinglePostPage extends Component {
 					return;
 				}
 				let post = <Row className="EntryRow">
-						<Col className="EntryImage" xs="12" lg="5">
-							<div className="SinglePostEntryImage EntryRowImage sticky-top fixed-bottom" style={{ backgroundImage: `url('${data.post.meta.photo}')` }} />
-						</Col>
-						<Col className="" xs="12" lg="7">
-							<SinglePostEntryRowRight title={data.post.meta.title} author={data.post.meta.author} body={data.post.content} />
-						</Col>
+							<h1 className="SingleEntryTitle">
+								{data.post.meta.title}
+							</h1>
+							
+					<div className="SinglePostEntryContent">
+						<div className="SinglePostEntryImage EntryRowImage" style={{ backgroundImage: `url('${data.post.meta.photo}')` }} />
+						<div dangerouslySetInnerHTML={{__html: data.post.content}}>
+						</div>
+						<div className="EntryRowRightDetails">
+							<span className="EntryRowRightDetailsAuthorDesc">
+								Submitted by: <span className="EntryRowRightDetailsAuthorName">
+									{data.post.meta.author}
+								</span>
+							</span>
+						</div>
+					</div>
 				</Row>;
 				document.title = data.post.meta.title + " • " + ConfigManager.get().site.site_name;
 				this.setState({ post: post });
@@ -41,7 +51,6 @@ class SinglePostPage extends Component {
 
     render() {
 		return <div>
-			<div className="SinglePostEntryShadow" />
 			<div className="Entry">
 				{this.state.post}
 			</div>
