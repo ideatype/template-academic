@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Header from "./Header.js";
 import { Row, Col } from "reactstrap";
 import "./SinglePostPage.css";
+import LocaleManager from "./LocaleManager";
 import ConfigManager from "./ConfigManager";
 import SinglePostEntryRowRight from "./SinglePostEntryRowRight";
 import LoadingManager from "./LoadingManager";
@@ -17,7 +18,8 @@ class SinglePostPage extends Component {
 
 	componentDidMount() {
 		LoadingManager.start("SinglePostPage");
-		fetch(`${API_ROOT}/api/post/${this.props.match.params.postId}`)
+		let langSuffix = LocaleManager.getAPILangSuffix();
+		fetch(`${API_ROOT}/api/post/${this.props.match.params.postId}${langSuffix}`)
 			.then(results => {
 				return results.json();
 			})
@@ -36,7 +38,7 @@ class SinglePostPage extends Component {
 						</div>
 						<div className="EntryRowRightDetails">
 							<span className="EntryRowRightDetailsAuthorDesc">
-								Submitted by: <span className="EntryRowRightDetailsAuthorName">
+								<span className="EntryRowRightDetailsAuthorName">
 									{data.post.meta.author}
 								</span>
 							</span>

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ListEntry from './ListEntry.js';
 import './EntryList.css';
+import LocaleManager from "./LocaleManager";
 import LoadingManager from "./LoadingManager";
 import { API_ROOT } from "./ApiConf";
 
@@ -16,7 +17,8 @@ class EntryList extends Component {
 
 	componentDidMount() {
 		LoadingManager.start("EntryList");
-		fetch(`${API_ROOT}/api/posts`)
+		let langSuffix = LocaleManager.getAPILangSuffix();
+		fetch(`${API_ROOT}/api/posts${langSuffix}`)
 			.then(results => {
 				return results.json();
 			}).then(data => {
