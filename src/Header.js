@@ -39,7 +39,6 @@ class Header extends Component {
 	}
 
 	render() {
-		console.log(this.state.topMenuEntries);
 		return (
 			<div className="Header">
 				<Navbar color="light" light expand="md">
